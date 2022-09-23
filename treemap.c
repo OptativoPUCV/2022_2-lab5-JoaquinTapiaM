@@ -94,7 +94,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
         return new->pair;
       }
 
-      if(new->current->left == NULL && new->current->right == NULL){
+      if(new->left == NULL && new->right == NULL){
         return NULL;
       }
     }
