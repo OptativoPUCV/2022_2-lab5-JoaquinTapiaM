@@ -83,3 +83,16 @@ treemap.c:82:10: error: implicit declaration of function ‘lower_than’ [-Werr
 cc1: all warnings being treated as errors
 Compilation failed
 31d814d
+Fri 23 Sep 2022 11:55:23 AM UTC: 
+ treemap.c | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:97:13: error: ‘TreeNode’ has no member named ‘current’
+   97 |       if(new->current->left == NULL && new->current->right == NULL){
+      |             ^~
+treemap.c:97:43: error: ‘TreeNode’ has no member named ‘current’
+   97 |       if(new->current->left == NULL && new->current->right == NULL){
+      |                                           ^~
+Compilation failed
+c331139
