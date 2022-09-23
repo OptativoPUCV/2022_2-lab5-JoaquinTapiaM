@@ -102,9 +102,54 @@ TreeNode * minimum(TreeNode * x){
     return NULL;
 }
 
+//5.- Implemente la función void removeNode(TreeMap * tree, TreeNode* node). Esta función elimina el nodo *node* del árbol *tree*. Recuerde que para eliminar un node existen 3 casos:
+//**Nodo sin hijos:** Se anula el puntero del padre que apuntaba al nodo
+//**Nodo con un hijo:** El padre del nodo pasa a ser padre de su hijo
+//**Nodo con dos hijos:** Descienda al hijo derecho y obtenga el menor nodo del subárbol (con la función minimum). Reemplace los datos (key,value) de *node* con los del nodo "minimum". Elimine el nodo minimum (para hacerlo puede usar la misma función *removeNode*).
+
 
 void removeNode(TreeMap * tree, TreeNode* node) {
-
+  TreeNode * aux = node->parent;
+  //caso sin hijos
+  if(node->left == NULL && node->right == NULL){
+    if(is_equal(aux->right->pair->key,node->pair->key)){
+      aux->left = NULL;
+      return;
+    }
+    if(is_equal(aux->right->pair->key,node->pair->key)){
+      aux->right == NULL;
+      return;
+    }
+  }
+  //caso con 2 hijos
+  else if(node->left != NULL && node->right != NULL){
+    TreeNode * x = node->right;
+    x = minimum(x);
+    removeNode(x);
+    node->pair->key = x->key;
+    node->pair->value = x->value;
+  }
+  else {
+    if(node->left == NULL){
+      if(is_equal(aux->right->pair->key,node->pair->key)){
+      aux->left = node->right;
+      return;
+      }
+      if(is_equal(aux->right->pair->key,node->pair->key)){
+        aux->right == node->right;
+        return;
+      }
+    }
+    if(node->right == NULL){
+      if(is_equal(aux->right->pair->key,node->pair->key)){
+      aux->left = node->left;
+      return;
+      }
+      if(is_equal(aux->right->pair->key,node->pair->key)){
+        aux->right == node->left;
+        return;
+      }
+  }
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){

@@ -211,3 +211,98 @@ Fri 23 Sep 2022 04:59:02 PM UTC:
  tests:  15|4
 total_score: 25/70
 9a64f54
+Fri 23 Sep 2022 06:21:06 PM UTC: 
+ treemap.c | 47 ++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 46 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:115:8: error: too few arguments to function ‘is_equal’
+  115 |     if(is_equal(aux->right->pair->key,node->pair->key)){
+      |        ^~~~~~~~
+In file included from test.c:4:
+treemap.c:22:5: note: declared here
+   22 | int is_equal(TreeMap* tree, void* key1, void* key2){
+      |     ^~~~~~~~
+In file included from test.c:4:
+treemap.c:119:8: error: too few arguments to function ‘is_equal’
+  119 |     if(is_equal(aux->right->pair->key,node->pair->key)){
+      |        ^~~~~~~~
+In file included from test.c:4:
+treemap.c:22:5: note: declared here
+   22 | int is_equal(TreeMap* tree, void* key1, void* key2){
+      |     ^~~~~~~~
+In file included from test.c:4:
+treemap.c:120:18: error: statement with no effect [-Werror=unused-value]
+  120 |       aux->right == NULL;
+      |                  ^
+treemap.c:128:16: error: passing argument 1 of ‘removeNode’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  128 |     removeNode(x);
+      |                ^
+      |                |
+      |                TreeNode *
+treemap.c:111:27: note: expected ‘TreeMap *’ but argument is of type ‘TreeNode *’
+  111 | void removeNode(TreeMap * tree, TreeNode* node) {
+      |                 ~~~~~~~~~~^~~~
+treemap.c:128:5: error: too few arguments to function ‘removeNode’
+  128 |     removeNode(x);
+      |     ^~~~~~~~~~
+treemap.c:111:6: note: declared here
+  111 | void removeNode(TreeMap * tree, TreeNode* node) {
+      |      ^~~~~~~~~~
+treemap.c:129:24: error: ‘TreeNode’ has no member named ‘key’
+  129 |     node->pair->key = x->key;
+      |                        ^~
+treemap.c:130:26: error: ‘TreeNode’ has no member named ‘value’
+  130 |     node->pair->value = x->value;
+      |                          ^~
+treemap.c:134:10: error: too few arguments to function ‘is_equal’
+  134 |       if(is_equal(aux->right->pair->key,node->pair->key)){
+      |          ^~~~~~~~
+In file included from test.c:4:
+treemap.c:22:5: note: declared here
+   22 | int is_equal(TreeMap* tree, void* key1, void* key2){
+      |     ^~~~~~~~
+In file included from test.c:4:
+treemap.c:138:10: error: too few arguments to function ‘is_equal’
+  138 |       if(is_equal(aux->right->pair->key,node->pair->key)){
+      |          ^~~~~~~~
+In file included from test.c:4:
+treemap.c:22:5: note: declared here
+   22 | int is_equal(TreeMap* tree, void* key1, void* key2){
+      |     ^~~~~~~~
+In file included from test.c:4:
+treemap.c:139:20: error: statement with no effect [-Werror=unused-value]
+  139 |         aux->right == node->right;
+      |         ~~~~~~~~~~~^~~~~~~~~~~~~~
+treemap.c:144:10: error: too few arguments to function ‘is_equal’
+  144 |       if(is_equal(aux->right->pair->key,node->pair->key)){
+      |          ^~~~~~~~
+In file included from test.c:4:
+treemap.c:22:5: note: declared here
+   22 | int is_equal(TreeMap* tree, void* key1, void* key2){
+      |     ^~~~~~~~
+In file included from test.c:4:
+treemap.c:148:10: error: too few arguments to function ‘is_equal’
+  148 |       if(is_equal(aux->right->pair->key,node->pair->key)){
+      |          ^~~~~~~~
+In file included from test.c:4:
+treemap.c:22:5: note: declared here
+   22 | int is_equal(TreeMap* tree, void* key1, void* key2){
+      |     ^~~~~~~~
+In file included from test.c:4:
+treemap.c:149:20: error: statement with no effect [-Werror=unused-value]
+  149 |         aux->right == node->left;
+      |         ~~~~~~~~~~~^~~~~~~~~~~~~
+test.c:503:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  503 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:606:1: error: expected declaration or statement at end of input
+  606 | }
+      | ^
+At top level:
+test.c:503:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  503 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+979946f
