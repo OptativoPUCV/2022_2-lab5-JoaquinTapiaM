@@ -113,11 +113,11 @@ void removeNode(TreeMap * tree, TreeNode* node) {
   //caso sin hijos
   if(node->left == NULL && node->right == NULL){
     if(tree->lower_than(node->pair->key,aux->pair->key)){
-      aux->left = NULL;
+      aux->right = NULL;
       return;
     }
     if(tree->lower_than(aux->pair->key, node->pair->key)){
-      aux->right = NULL;
+      aux->left = NULL;
       return;
     }
   }
@@ -129,6 +129,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     node->pair->key = x->pair->key;
     node->pair->value = x->pair->value;
   }
+  //caso con 1 hijo
   else {
     if(node->left == NULL){
       if(is_equal(tree,aux->right->pair->key,node->pair->key)){
