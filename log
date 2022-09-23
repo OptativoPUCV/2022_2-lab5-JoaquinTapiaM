@@ -17,3 +17,9 @@ treemap.c:43:6: error: invalid type argument of ‘->’ (have ‘TreeMap’)
       |      ^~
 Compilation failed
 4a9645b
+Fri 23 Sep 2022 11:35:05 AM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  1|8
+total_score: 0/70
+923b152
