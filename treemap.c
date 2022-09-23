@@ -83,19 +83,19 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     TreeNode * new = tree->root;
 
     while(new!=NULL){
-      
+      //actual es menor que key ingresada
       if(tree->lower_than(new->pair->key, key)){
-        if(new->left == NULL){
-          return NULL;
-        }
-        new = new->left;
-      }
-
-      if(tree->lower_than(key, new->pair->key)){
         if(new->right == NULL){
           return NULL;
         }
         new = new->right;
+      }
+
+      if(tree->lower_than(key, new->pair->key)){
+        if(new->left == NULL){
+          return NULL;
+        }
+        new = new->left;
       }
       
       if(is_equal(tree, new->pair->key, key)){
