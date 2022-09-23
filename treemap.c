@@ -78,7 +78,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
         }
         aux = aux->right;
       }
-      if(is_equal(tree, new->pair->key, key)){
+      if(is_equal(tree, aux->pair->key, key)){
         return;
       }
     }
