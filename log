@@ -462,3 +462,39 @@ test.c:503:5: error: ‘main’ defined but not used [-Werror=unused-function]
 cc1: all warnings being treated as errors
 Compilation failed
 cc9ac3b
+Fri 23 Sep 2022 06:26:53 PM UTC: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:115:57: error: expected statement before ‘)’ token
+  115 |     if(tree->lower_than(node->pair->key,aux->pair->key))){
+      |                                                         ^
+treemap.c:115:5: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  115 |     if(tree->lower_than(node->pair->key,aux->pair->key))){
+      |     ^~
+treemap.c:115:58: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  115 |     if(tree->lower_than(node->pair->key,aux->pair->key))){
+      |                                                          ^
+treemap.c:119:58: error: expected statement before ‘)’ token
+  119 |     if(tree->lower_than(aux->pair->key, node->pair->key))){
+      |                                                          ^
+treemap.c:119:5: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  119 |     if(tree->lower_than(aux->pair->key, node->pair->key))){
+      |     ^~
+treemap.c:119:59: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  119 |     if(tree->lower_than(aux->pair->key, node->pair->key))){
+      |                                                           ^
+test.c:503:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  503 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:606:1: error: expected declaration or statement at end of input
+  606 | }
+      | ^
+At top level:
+test.c:503:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  503 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+11026cb
