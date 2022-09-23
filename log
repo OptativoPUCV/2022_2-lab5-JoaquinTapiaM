@@ -385,3 +385,36 @@ test.c:503:5: error: ‘main’ defined but not used [-Werror=unused-function]
 cc1: all warnings being treated as errors
 Compilation failed
 55db028
+Fri 23 Sep 2022 06:22:26 PM UTC: 
+ treemap.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:120:18: error: statement with no effect [-Werror=unused-value]
+  120 |       aux->right == NULL;
+      |                  ^
+treemap.c:129:24: error: ‘TreeNode’ has no member named ‘key’
+  129 |     node->pair->key = x->key;
+      |                        ^~
+treemap.c:130:26: error: ‘TreeNode’ has no member named ‘value’
+  130 |     node->pair->value = x->value;
+      |                          ^~
+treemap.c:139:20: error: statement with no effect [-Werror=unused-value]
+  139 |         aux->right == node->right;
+      |         ~~~~~~~~~~~^~~~~~~~~~~~~~
+treemap.c:149:20: error: statement with no effect [-Werror=unused-value]
+  149 |         aux->right == node->left;
+      |         ~~~~~~~~~~~^~~~~~~~~~~~~
+test.c:503:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  503 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:606:1: error: expected declaration or statement at end of input
+  606 | }
+      | ^
+At top level:
+test.c:503:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  503 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+701cc21

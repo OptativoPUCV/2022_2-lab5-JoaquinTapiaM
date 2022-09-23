@@ -125,27 +125,27 @@ void removeNode(TreeMap * tree, TreeNode* node) {
   else if(node->left != NULL && node->right != NULL){
     TreeNode * x = node->right;
     x = minimum(x);
-    removeNode(x);
+    removeNode(tree, x);
     node->pair->key = x->key;
     node->pair->value = x->value;
   }
   else {
     if(node->left == NULL){
-      if(is_equal(aux->right->pair->key,node->pair->key)){
+      if(is_equal(tree,aux->right->pair->key,node->pair->key)){
       aux->left = node->right;
       return;
       }
-      if(is_equal(aux->right->pair->key,node->pair->key)){
+      if(is_equal(tree,aux->right->pair->key,node->pair->key)){
         aux->right == node->right;
         return;
       }
     }
     if(node->right == NULL){
-      if(is_equal(aux->right->pair->key,node->pair->key)){
+      if(is_equal(tree, aux->right->pair->key,node->pair->key)){
       aux->left = node->left;
       return;
       }
-      if(is_equal(aux->right->pair->key,node->pair->key)){
+      if(is_equal(tree, aux->right->pair->key,node->pair->key)){
         aux->right == node->left;
         return;
       }
