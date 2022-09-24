@@ -809,3 +809,17 @@ Sat 24 Sep 2022 04:59:06 PM UTC:
  tests:  25|1
 total_score: 60/70
 72ab4c1
+Sat 24 Sep 2022 05:15:03 PM UTC: 
+ treemap.c | 27 +++++++++++++++++++++++++++
+ 1 file changed, 27 insertions(+)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:220:5: error: expected ‘,’ or ‘;’ before ‘while’
+  220 |     while(1){
+      |     ^~~~~
+treemap.c:219:16: error: unused variable ‘aux’ [-Werror=unused-variable]
+  219 |     TreeNode * aux = tree->root
+      |                ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+5aa4038
