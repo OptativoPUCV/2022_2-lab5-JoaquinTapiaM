@@ -222,6 +222,8 @@ Pair * firstTreeMap(TreeMap * tree) {
   while(aux->left != NULL){
     aux = aux->left;
   }
+  Pair * par = aux->pair;
+  return par;
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
