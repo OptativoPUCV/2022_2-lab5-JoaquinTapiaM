@@ -232,27 +232,20 @@ Pair * nextTreeMap(TreeMap * tree) {
     return NULL;
   }
   TreeNode * aux = tree->current;
-  if(aux->right!= NULL){
+  if(aux->right == NULL){
+    if(aux->parent == NULL){
+      return NULL;
+    }
+    if(tree->lower->than(aux->parent->pair->key, aux->pair->key)){
+      return NULL;
+    }
+    aux = aux->parent;
+    return aux->pair;
+  }
+  if(aux->right != NULL){
     aux = aux->right;
     aux = minimum(aux);
-    Pair * par = aux->pair;
-    tree->current = aux;
-    return par;
-  }
-  else if(aux->parent == NULL){
-    return NULL;
-  }
-  else if(aux->right == NULL){
-    if(tree->lower_than(aux->pair->key, aux->parent->pair->key)){
-      aux = aux->parent;
-      if(aux->right ==NULL){
-        return aux->pair;
-      }
-      aux = aux->right;
-      aux = minimum(aux);
-      tree->current = aux;
-      return aux->pair;
-    }
+    return aux->pair;
   }
   return NULL;
 }

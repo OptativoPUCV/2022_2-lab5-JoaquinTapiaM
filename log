@@ -781,3 +781,13 @@ Sat 24 Sep 2022 04:27:27 PM UTC:
  tests:  23|2
 total_score: 50/70
 9ef6e11
+Sat 24 Sep 2022 04:37:31 PM UTC: 
+ treemap.c | 17 +++++------------
+ 1 file changed, 5 insertions(+), 12 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:239:12: error: ‘TreeMap’ has no member named ‘lower’
+  239 |     if(tree->lower->than(aux->parent->pair->key, aux->pair->key)){
+      |            ^~
+Compilation failed
+0104255
