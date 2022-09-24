@@ -566,3 +566,9 @@ test.c:503:5: error: ‘main’ defined but not used [-Werror=unused-function]
 cc1: all warnings being treated as errors
 Compilation failed
 3ad6a46
+Sat 24 Sep 2022 02:47:29 AM UTC: 
+ treemap.c | 41 -----------------------------------------
+ 1 file changed, 41 deletions(-)
+ tests:  15|4
+total_score: 25/70
+0627db4
