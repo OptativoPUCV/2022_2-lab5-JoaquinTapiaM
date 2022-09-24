@@ -239,5 +239,16 @@ Pair * nextTreeMap(TreeMap * tree) {
     tree->current = aux;
     return par;
   }
+  else if(aux->right == NULL){
+    if(tree->lower_than(aux->pair->key, aux->parent->pair->key)){
+      aux = aux->parent;
+      if(aux->right ==NULL){
+        return aux->pair;
+      }
+      aux = aux->right;
+      aux = minimum(aux);
+      return aux->pair;
+    }
+  }
   return NULL;
 }
