@@ -223,6 +223,7 @@ Pair * firstTreeMap(TreeMap * tree) {
     aux = aux->left;
   }
   Pair * par = aux->pair;
+  tree->current = aux;
   return par;
 }
 
