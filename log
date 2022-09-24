@@ -791,3 +791,9 @@ treemap.c:239:12: error: ‘TreeMap’ has no member named ‘lower’
       |            ^~
 Compilation failed
 0104255
+Sat 24 Sep 2022 04:37:40 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  22|2
+total_score: 50/70
+f51d27a

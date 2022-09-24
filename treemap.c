@@ -236,7 +236,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     if(aux->parent == NULL){
       return NULL;
     }
-    if(tree->lower->than(aux->parent->pair->key, aux->pair->key)){
+    if(tree->lower_than(aux->parent->pair->key, aux->pair->key)){
       return NULL;
     }
     aux = aux->parent;
