@@ -150,13 +150,14 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     TreeNode * x = node->right;
     x = minimum(x);
     removeNode(tree, x);
-    x->parent = aux;
     if(tree->lower_than(node->pair->key,aux->pair->key)){
       aux->left = x;
+      x->parent = aux;
       return;
     }
     if(tree->lower_than(aux->pair->key, node->pair->key)){
       aux->right = x;
+      x->parent = aux;
       return;
     }
   }
