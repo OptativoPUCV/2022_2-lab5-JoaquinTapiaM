@@ -180,7 +180,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     TreeNode * new = tree->root;
 
     while(new!=NULL){
-      //actual es menor que key ingresada
+      
       if(tree->lower_than(new->pair->key, key)){
         if(new->right == NULL){
           return NULL;
