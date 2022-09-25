@@ -216,6 +216,18 @@ Pair * upperBound(TreeMap * tree, void* key) {
     if(searchTreeMap(tree,key)!=NULL){
       return searchTreeMap(tree,key);
     }
+    if(tree->root == NULL){
+      return NULL;
+    }
+    Pair * aux = firstTreeMap(tree);
+    while(aux!=NULL){
+      if(tree->lower_than(aux->key,key)){
+        aux = nextTreeMap(tree);
+      }
+      if(tree->lower_than(key, aux->key)){
+        return aux;
+      }
+    }
     return NULL;
 }
 
